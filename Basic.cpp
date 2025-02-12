@@ -8,7 +8,6 @@ public:
     string Name;
     string company;
     int age;
-
 public:
     employee(string Name_, string company_, int age_)
     {
@@ -16,9 +15,6 @@ public:
         company = company_;
         age = age_;
     }
-
-
-    
     void Porichiti()
     {
         std::cout << "Name - " << Name << std::endl; // #shift+alt+down arrow to copy same line
