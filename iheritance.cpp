@@ -61,27 +61,31 @@ public:
             std::cout << Name << "is too young" << std::endl;
     }
 };
+class developer : public employee
+{  
+    public:        
+    string favLanguage;
+    string department;
 
+public:
+    developer(string Name_, string company_, int age_,string favLanguage_, string department_): employee(Name_,company_,age_)  //####
+    {
+        favLanguage = favLanguage_;
+        department = department_;
+    };
+    void Porichiti(){
+        employee::Porichiti();  // extends porichiti from employee 
+        std::cout << "Fav Langauge - " << favLanguage << std::endl;
+        std::cout << "Department - " << department << std::endl;
+    };
+
+};
 int main()
 {
-    int number;
+    
 
-    employee two = employee("Soikot", "Facebook", 45);
-    two.Porichiti();
+    developer four = developer("Chudir Bhai","IUB", 65, "python", "Law");
+     four.Porichiti();
 
-    employee three = employee("Ahona", "NSU", 56);
-    three.Porichiti();
-    int ageTwo = two.getAge();
-    std ::cout << ageTwo << std::endl;
-    two.setAge(15);
-    ageTwo = two.getAge();
-    std ::cout << ageTwo << std::endl;
 
-    two.promotion();
-    three.promotion();
 };
-/* what did we learn?
-any class that wants to use the abstract classes methods has to have implementation of those methods in their class blocks
-== virtual void
-
-*/
